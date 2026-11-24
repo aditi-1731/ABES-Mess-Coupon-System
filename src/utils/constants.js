@@ -8,6 +8,7 @@ export const MEAL_TYPES = {
   DINNER: 'Dinner'
 };
 
+//shows the rush time of the meals
 export const MEAL_TIMINGS = {
   [MEAL_TYPES.BREAKFAST]: { start: '07:30', end: '09:30', cutoff: '06:30', display: '7:30 AM - 9:30 AM' },
   [MEAL_TYPES.LUNCH]: { start: '12:30', end: '14:30', cutoff: '11:00', display: '12:30 PM - 2:30 PM' },
@@ -15,6 +16,7 @@ export const MEAL_TIMINGS = {
   [MEAL_TYPES.DINNER]: { start: '19:30', end: '21:30', cutoff: '18:30', display: '7:30 PM - 9:30 PM' },
 };
 
+// times slots where user book the slot
 export const TIME_SLOTS = {
   [MEAL_TYPES.BREAKFAST]: ['07:30 - 08:00', '08:00 - 08:30', '08:30 - 09:00', '09:00 - 09:30'],
   [MEAL_TYPES.LUNCH]: ['12:30 - 13:00', '13:00 - 13:30', '13:30 - 14:00', '14:00 - 14:30'],
