@@ -29,7 +29,7 @@ function notifyStorageChange(key) {
   try {
     window.dispatchEvent(new Event('storage'));
   } catch {
-    // ignore
+    // ignore the catch block 
   }
 }
 
