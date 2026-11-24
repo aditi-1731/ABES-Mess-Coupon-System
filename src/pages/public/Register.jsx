@@ -13,7 +13,7 @@ export default function Register() {
     department: 'Computer Science & Engineering',
     batch: '2023 - 2027',
     hostelType: 'Hosteller',
-    hostelName: 'Vivekananda Boys Hostel',
+    hostelName: 'ABES Hostel',
     phone: '',
     password: '',
     confirmPassword: ''
