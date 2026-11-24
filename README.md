@@ -163,7 +163,7 @@ npm run preview
 
 ---
 
-## 🔮 Future Scope (Phase 2 Roadmap)
+## 🔮 Future Scope
 1. **Node.js + PostgreSQL Backend**: Replace `mockApi.js` with a real REST API, JWT authentication and a database.
 2. **Server-side QR verification**: Sign and verify QR tokens on the server so coupons cannot be forged or reused.
 3. **Real payments**: Connect a payment gateway for plan purchases and wallet top-ups.
