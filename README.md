@@ -1,7 +1,7 @@
 # ABES Mess Coupon System 🍲
 
 > **Status:** Frontend prototype using dummy data. The Node.js + PostgreSQL backend is planned.
-> **Live demo:** [https://your-site-name.onrender.com](https://your-site-name.onrender.com) *(replace after deploying)*
+> **Live demo:** https://abes-mess-coupon-system.onrender.com
 
 ## About the Project
 
