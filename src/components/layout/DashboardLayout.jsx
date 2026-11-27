@@ -79,13 +79,21 @@ export default function DashboardLayout() {
               <MenuIcon className="w-5 h-5" />
             </button>
 
-            <div>
-              <h1 className="text-base sm:text-lg font-bold font-heading text-navy dark:text-white capitalize">
-                {user?.role} Portal
-              </h1>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">
-                ABES Engineering College, Ghaziabad
-              </p>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div>
+                <h1 className="text-base sm:text-lg font-bold font-heading text-navy dark:text-white capitalize">
+                  {user?.role} Portal
+                </h1>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">
+                  ABES Engineering College, Ghaziabad
+                </p>
+              </div>
+
+              {/* Thin vertical divider and ABESEC Ghaziabad label */}
+              <div className="h-6 sm:h-7 w-px bg-slate-300 dark:bg-dark-border" />
+              <span className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                ABESEC Ghaziabad
+              </span>
             </div>
           </div>
 

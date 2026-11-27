@@ -25,27 +25,35 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-dark-border transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-orange to-amber-500 flex items-center justify-center text-white shadow-md shadow-orange/20 group-hover:scale-105 transition-transform duration-200">
-              <UtensilsCrossed className="w-6 h-6" />
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-orange to-amber-500 flex items-center justify-center text-white shadow-md shadow-orange/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
+              <UtensilsCrossed className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-heading font-extrabold text-xl text-navy dark:text-white tracking-tight">
-                  ABES <span className="text-orange">MESS</span>
-                </span>
-                {isDemoMode && (
-                  <span className="px-1.5 py-0.5 text-[10px] font-bold uppercase rounded bg-orange-soft dark:bg-orange/20 text-orange border border-orange/30">
-                    Demo
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className="font-heading font-extrabold text-lg sm:text-xl text-navy dark:text-white tracking-tight whitespace-nowrap">
+                    ABES <span className="text-orange">MESS</span>
                   </span>
-                )}
+                  {isDemoMode && (
+                    <span className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase rounded bg-orange-soft dark:bg-orange/20 text-orange border border-orange/30">
+                      Demo
+                    </span>
+                  )}
+                </div>
+                <p className="text-[10px] sm:text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-none">
+                  Smart Dining & Coupon Portal
+                </p>
               </div>
-              <p className="text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-none">
-                Smart Dining & Coupon Portal
-              </p>
+
+              {/* Thin vertical divider and ABESEC Ghaziabad label */}
+              <div className="h-6 sm:h-7 w-px bg-slate-300 dark:bg-dark-border" />
+              <span className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                ABESEC Ghaziabad
+              </span>
             </div>
           </Link>
 
@@ -112,17 +120,17 @@ export default function Navbar() {
           </div>
 
           {/* Mobile hamburger menu toggle */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1.5 sm:gap-2 md:hidden shrink-0">
             <button
               onClick={toggleTheme}
               aria-label="Toggle Theme"
-              className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-dark-card"
+              className="p-1.5 sm:p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-dark-card"
             >
               {isDark ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-dark-card"
+              className="p-1.5 sm:p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-dark-card"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
             </button>

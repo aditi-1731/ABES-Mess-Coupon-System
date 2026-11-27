@@ -53,11 +53,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-100 dark:border-dark-border pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-          <p>© {new Date().getFullYear()} ABES Engineering College. All rights reserved.</p>
-          <p className="flex items-center gap-1 mt-2 sm:mt-0">
-            Crafted with <Heart className="w-3.5 h-3.5 text-danger fill-danger" /> for ABES Dining Community
+        <div className="border-t border-slate-100 dark:border-dark-border pt-6 flex flex-col gap-1 text-xs text-slate-500 dark:text-slate-400">
+          <p>
+            Developed and maintained by: <span className="font-medium text-slate-700 dark:text-slate-200">Aditi Tripathi</span>, <span className="font-medium text-slate-700 dark:text-slate-200">Aayushi Rawat</span> | Computer Science and Engineering, CSE11
           </p>
+          <p>Full Stack Development Team</p>
+          <p>© ABESEC Ghaziabad. All rights reserved.</p>
         </div>
       </div>
     </footer>
