@@ -1,5 +1,8 @@
 # ABES Mess Coupon System 🍲
 
+> **Status:** Frontend prototype using dummy data. The Node.js + PostgreSQL backend is planned.
+> **Live demo:** [https://your-site-name.onrender.com](https://your-site-name.onrender.com) *(replace after deploying)*
+
 ## About the Project
 
 The ABES Mess Coupon System is a web application that replaces paper coupons and long queues at the college mess with a digital, QR-based process. A student books a meal, gets a QR coupon on their phone, and shows it at the counter. Mess staff scan it, the system confirms it instantly, and the student collects food without waiting in a coupon line.
@@ -17,21 +20,6 @@ The ABES Mess Coupon System is a web application that replaces paper coupons and
 
 ---
 
-## 🔑 Demo Login Credentials
-
-These are **dummy sample accounts** for testing only. Do not enter real credentials anywhere in this prototype. Click a **Try Demo** button on the landing page, or use the autofill chips on the Login screen.
-
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **Student** | `aditi.24b0101070@abes.ac.in` | `student123` |
-| **Staff Counter** | `staff@abes.ac.in` | `staff123` |
-| **Mess Manager** | `manager@abes.ac.in` | `manager123` |
-| **Administrator** | `admin@abes.ac.in` | `admin123` |
-
-To hide the demo buttons and chips, set `VITE_DEMO_MODE=false` in the `.env` file and restart the dev server. Keep it `false` for any real deployment.
-
----
-
 ## ✨ Key Features
 
 - Role-based login for Student, Staff, Manager and Admin with protected routes
@@ -43,6 +31,43 @@ To hide the demo buttons and chips, set `VITE_DEMO_MODE=false` in the `.env` fil
 - Manager tools: menu editor, kitchen quantity guidance, charts and feedback desk
 - Admin tools: user directory, plan pricing, system settings and demo data reset
 - Light and dark mode, responsive layout from 360px mobile to desktop
+
+---
+
+## 🔑 Demo Login Credentials
+
+These are **dummy sample accounts** for testing only. Do not enter real credentials anywhere in this prototype. Click a **Try Demo** button on the landing page, or use the autofill chips on the Login screen.
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Student** | `aditi.24b0101070@abes.ac.in` | `student123` |
+| **Staff Counter** | `staff@abes.ac.in` | `staff123` |
+| **Mess Manager** | `manager@abes.ac.in` | `manager123` |
+| **Administrator** | `admin@abes.ac.in` | `admin123` |
+
+**Demo mode switch:** the demo buttons and autofill chips are controlled by the environment variable `VITE_DEMO_MODE`.
+- `VITE_DEMO_MODE=true` shows them (used for the college demo).
+- Any other value hides them. Use this for any real deployment.
+
+Create a `.env` file in the project root to set it locally (the file is not committed to Git). On Render, add it under **Environment** before building, because Vite reads it at build time. Restart the dev server after changing it.
+
+---
+
+## 🎬 How to Try It (2-Minute Walkthrough)
+
+1. Open the app in a browser and click **Student Demo**.
+2. Go to **Menu**, book a meal and choose a time slot, then open **My QR Coupon** to see the rotating QR.
+3. Open the app in a second tab of the same browser and click **Staff Demo**.
+4. In **Scanner**, use the simulation panel to scan the student's booking and see **VALID**. Scan it again to see **ALREADY USED**.
+5. Go back to the student tab. The coupon now shows **Served** without a refresh.
+6. Log in as **Manager** to see kitchen quantity guidance and reports, and as **Admin** to manage users, plans and settings.
+
+<!-- Screenshots: add images to docs/screenshots/ and uncomment below
+![Landing page](docs/screenshots/landing.png)
+![Student QR coupon](docs/screenshots/qr-coupon.png)
+![Staff scanner](docs/screenshots/scanner.png)
+![Admin dashboard](docs/screenshots/admin-dashboard.png)
+-->
 
 ---
 
@@ -61,6 +86,7 @@ To hide the demo buttons and chips, set `VITE_DEMO_MODE=false` in the `.env` fil
 - **Celebration & Sound**: `canvas-confetti` + Web Audio API chimes
 - **Typography**: Google Fonts Poppins (headings) and Inter (body)
 - **State & Persistence**: React Context (`AuthContext`, `DataContext`, `ThemeContext`) with `localStorage` persistence and cross-tab events
+- **Hosting**: Render (Static Site)
 
 ---
 
@@ -73,7 +99,6 @@ abes-mess-coupon-system/
 ├── vite.config.js                 # Vite configuration with optimized vendor chunks
 ├── tailwind.config.js             # Theme tokens, colors, custom shadows
 ├── postcss.config.js              # PostCSS plugins (Tailwind & Autoprefixer)
-├── .env                           # VITE_DEMO_MODE switch
 ├── public/                        # Public assets
 └── src/
     ├── main.jsx                   # Entry point with Theme, Auth, Data providers
@@ -141,25 +166,48 @@ Every data access in the application goes through `src/services/mockApi.js`. Whe
 ### Prerequisites
 - Node.js version 18 or higher
 - npm version 9 or higher
+- Git
 
-### Development Server
+### Run Locally
 ```bash
-# 1. Install dependencies
+# 1. Clone the repository
+git clone https://github.com/aditi-1731/ABES-Mess-Coupon-System.git
+cd ABES-Mess-Coupon-System
+
+# 2. Install dependencies
 npm install
 
-# 2. Run local development server
+# 3. (Optional) show demo buttons and credentials chips
+echo "VITE_DEMO_MODE=true" > .env
+
+# 4. Run local development server
 npm run dev
 ```
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Production Build & Preview
 ```bash
-# Build production bundle
+# Build production bundle (output goes to dist/)
 npm run build
 
 # Preview production build locally
 npm run preview
 ```
+
+---
+
+## ☁️ Deployment (Render Static Site)
+
+| Setting | Value |
+| :--- | :--- |
+| Service type | Static Site |
+| Branch | `main` |
+| Build command | `npm install && npm run build` |
+| Publish directory | `dist` |
+| Environment variable | `VITE_DEMO_MODE=true` (for the demo) |
+| Redirects/Rewrites | Source `/*` → Destination `/index.html`, action **Rewrite** (needed for React Router) |
+
+Every push to `main` triggers a new deploy.
 
 ---
 
@@ -185,6 +233,13 @@ npm run preview
 
 ---
 
-## 👤 Author
+## 👥 Team
 
-**Aditi Tripathi**
+**Full Stack Development Team**, ABESEC Ghaziabad
+
+- **Aditi Tripathi**
+- **Aayushi Rawat**
+
+Computer Science and Engineering, CSE11
+
+© ABESEC Ghaziabad. All rights reserved.
